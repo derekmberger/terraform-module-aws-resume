@@ -3,7 +3,7 @@
 ##########################
 locals {
   # Constructs a consistent name used for resources (e.g., ECS service, IAM roles)
-  # If an environment is provided, it becomes "env-service_name", otherwise just "service_name"
+  # If an environment is provided, it becomes "env-service", otherwise just "service"
   environmental_name = trim(var.environment) != "" ? "${var.environment}-${var.service_name}" : var.service_name
 
   # Builds the CloudWatch Logs group path based on environment + service name
